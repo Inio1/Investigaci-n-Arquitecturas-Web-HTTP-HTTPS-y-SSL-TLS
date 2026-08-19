@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de Arquitecturas Web y Comunicación Segura</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --border-color: #dee2e6;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .references a {
+            color: #82ccdd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Fundamentos de Arquitecturas Web</h1>
+        <p>Investigación sobre arquitecturas y protocolos de seguridad en la Web</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#arquitecturas">Arquitecturas Web</a></li>
+            <li><a href="#http-https">HTTP y HTTPS</a></li>
+            <li><a href="#ssl-tls">SSL y TLS</a></li>
+            <li><a href="#referencias">Referencias</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- SECCIÓN 1: ARQUITECTURAS WEB -->
+        <section id="arquitecturas">
+            <h2>1. Arquitecturas Web</h2>
+            
+            <h3>¿Qué es una arquitectura web?</h3>
+            <p>La arquitectura web es el diseño conceptual y la estructura lógica que define cómo se comunican y organizan los diferentes componentes de un sistema web (como el cliente, el servidor, las bases de datos y las interfaces de programación o APIs). Su propósito es asegurar que la aplicación sea eficiente, segura, escalable y ofrezca una buena experiencia al usuario, gestionando cómo viaja la información a través de la red.</p>
+
+            <h3>Principales tipos de arquitecturas web</h3>
+            <ul>
+                <li><strong>Monolítica:</strong> Todo el código del sistema (interfaz de usuario, lógica de negocio y acceso a datos) está unificado en una sola base de código y se despliega como una única unidad.</li>
+                <li><strong>Cliente-Servidor (N-Capas):</strong> Divide la aplicación en capas lógicas. La más común es la de 3 capas: Presentación (Frontend), Lógica de negocio (Backend) y Datos (Base de datos).</li>
+                <li><strong>Microservicios:</strong> La aplicación se divide en pequeños servicios independientes que se comunican entre sí a través de APIs. Cada servicio tiene su propia lógica y base de datos.</li>
+                <li><strong>Serverless (Sin servidor):</strong> El desarrollador se enfoca solo en escribir el código en forma de funciones. El proveedor de la nube (como AWS o Google Cloud) gestiona dinámicamente la asignación de recursos y los servidores.</li>
+            </ul>
+
+            <h3>Arquitecturas más utilizadas actualmente</h3>
+            <p>En la actualidad, las arquitecturas basadas en <strong>Microservicios</strong> y <strong>Cliente-Servidor (separando Frontend en SPA y Backend en APIs REST/GraphQL)</strong> son las más dominantes. Las empresas tecnológicas modernas prefieren los microservicios por su capacidad de escalar partes específicas de una aplicación, aunque las monolíticas siguen siendo muy comunes para proyectos pequeños o startups que buscan un desarrollo rápido inicial.</p>
+
+            <h3>Comparación de Arquitecturas</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Monolítica</th>
+                            <th>Microservicios</th>
+                            <th>Serverless</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Estructura</strong></td>
+                            <td>Unidad única e indivisible.</td>
+                            <td>Múltiples servicios pequeños e independientes.</td>
+                            <td>Funciones ejecutadas bajo demanda (eventos).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ventajas</strong></td>
+                            <td>Fácil de desarrollar, probar y desplegar al inicio.</td>
+                            <td>Alta resiliencia; si falla un servicio, el resto sigue funcionando. Independencia tecnológica.</td>
+                            <td>No hay que gestionar servidores. Pago exclusivo por tiempo de ejecución.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Desventajas</strong></td>
+                            <td>Si una parte falla, puede caer todo el sistema. Difícil de actualizar.</td>
+                            <td>Difícil de orquestar y monitorear. Latencia de red entre servicios.</td>
+                            <td>Dependencia del proveedor (Vendor lock-in). Problemas de latencia en "arranques en frío" (cold starts).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Escalabilidad</strong></td>
+                            <td>Baja/Costosa (se debe duplicar toda la aplicación).</td>
+                            <td>Muy Alta (se escala solo el servicio que lo requiere).</td>
+                            <td>Automática e infinita (gestionada por la nube).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Complejidad</strong></td>
+                            <td>Baja en etapas tempranas, altísima a medida que crece.</td>
+                            <td>Alta desde el inicio (requiere DevOps avanzado).</td>
+                            <td>Media (requiere cambio de paradigma de programación).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Costos</strong></td>
+                            <td>Costos fijos por servidor, haya tráfico o no.</td>
+                            <td>Altos costos de infraestructura y mantenimiento.</td>
+                            <td>Muy bajos con poco tráfico, variables según consumo.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Casos de uso</strong></td>
+                            <td>Startups, blogs, aplicaciones internas simples.</td>
+                            <td>Netflix, Amazon, aplicaciones empresariales complejas.</td>
+                            <td>Procesamiento de datos en tiempo real, bots, tareas en segundo plano.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: HTTP Y HTTPS -->
+        <section id="http-https">
+            <h2>2. HTTP y HTTPS</h2>
+
+            <h3>¿Qué es HTTP?</h3>
+            <p><strong>HTTP</strong> (<em>Hypertext Transfer Protocol</em> - Protocolo de Transferencia de Hipertexto) es el protocolo fundamental de la World Wide Web. Define las reglas de cómo se formatean y transmiten los mensajes entre el navegador web (cliente) y el servidor web. Sigue un modelo de <strong>petición-respuesta</strong>: el cliente envía una petición HTTP para acceder a un recurso (como una página HTML o una imagen) y el servidor devuelve una respuesta HTTP con ese recurso o un mensaje de error. Por defecto, HTTP envía la información en texto plano, lo que significa que cualquiera que intercepte la comunicación puede leer los datos.</p>
+
+            <h3>¿Qué es HTTPS?</h3>
+            <p><strong>HTTPS</strong> (<em>Hypertext Transfer Protocol Secure</em>) es la versión segura de HTTP. Funciona exactamente igual en cuanto a la comunicación cliente-servidor, pero añade una capa de seguridad criptográfica (TLS/SSL). Esta capa cifra los datos antes de que viajen por la red, garantizando que, si la información es interceptada (como contraseñas o tarjetas de crédito), los atacantes solo verán caracteres ilegibles y no podrán descifrarlos sin la llave criptográfica correcta.</p>
+
+            <h3>Comparación: HTTP vs HTTPS</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>HTTP</th>
+                            <th>HTTPS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Funcionamiento</strong></td>
+                            <td>Transmite datos en texto plano.</td>
+                            <td>Transmite datos cifrados mediante algoritmos criptográficos.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seguridad</strong></td>
+                            <td>Nula. Vulnerable a ataques <em>Man-in-the-Middle</em> (MitM).</td>
+                            <td>Alta. Garantiza confidencialidad, integridad y autenticación.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Puerto habitual</strong></td>
+                            <td>Puerto 80</td>
+                            <td>Puerto 443</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cifrado</strong></td>
+                            <td>No posee cifrado.</td>
+                            <td>Usa protocolos SSL o TLS.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Escenarios de uso</strong></td>
+                            <td>Pruebas locales o sitios estáticos muy antiguos sin datos sensibles (cada vez menos aceptado).</td>
+                            <td>Comercio electrónico, banca, redes sociales y hoy en día, el estándar obligatorio para cualquier sitio web.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: SSL Y TLS -->
+        <section id="ssl-tls">
+            <h2>3. SSL y TLS</h2>
+
+            <h3>¿Qué son SSL y TLS?</h3>
+            <p><strong>SSL</strong> (<em>Secure Sockets Layer</em>) y <strong>TLS</strong> (<em>Transport Layer Security</em>) son protocolos criptográficos diseñados para proporcionar comunicaciones seguras a través de una red informática. Su función principal es establecer un "túnel" cifrado entre dos sistemas (como tu navegador y el servidor de tu banco) para asegurar que los datos no puedan ser leídos ni modificados por terceros.</p>
+
+            <h3>Diferencias y su relación con HTTPS</h3>
+            <p>La relación con HTTPS es directa: <strong>HTTPS es simplemente el protocolo HTTP ejecutándose sobre una capa de seguridad SSL o TLS</strong>. En cuanto a sus diferencias, TLS es en realidad el sucesor directo de SSL. Aunque a menudo se usan indistintamente en el lenguaje cotidiano (se sigue hablando de "Certificados SSL"), técnicamente SSL es la tecnología original de los años 90, mientras que TLS es la versión moderna, mejorada y más segura.</p>
+
+            <h3>¿Por qué TLS es el estándar y SSL es obsoleto?</h3>
+            <p>El protocolo SSL (en todas sus versiones: 1.0, 2.0 y 3.0) ha sido declarado <strong>obsoleto y deprecado</strong> (oficialmente en 2015 por la IETF) debido a graves vulnerabilidades de seguridad descubiertas en su diseño, como el famoso ataque POODLE, que permitía a los hackers descifrar conexiones seguras.</p>
+            <p>TLS es el estándar vigente (actualmente en sus versiones 1.2 y 1.3) porque utiliza algoritmos de cifrado mucho más robustos, procesos de negociación de claves (handshakes) más rápidos y seguros, y elimina funciones criptográficas débiles del pasado. Hoy en día, ningún navegador web moderno permite conexiones con el antiguo protocolo SSL.</p>
+        </section>
+    </main>
+
+    <footer id="referencias">
+        <h2>Referencias</h2>
+        <ul class="references" style="list-style: none; padding: 0; margin-top: 1rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <li style="margin-bottom: 10px;">
+                <strong>1. Mozilla Developer Network (MDN).</strong> (2023). <em>Introducción a HTTP</em>. Recuperado de: 
+                <br><a href="https://developer.mozilla.org/es/docs/Web/HTTP/Overview" target="_blank">https://developer.mozilla.org/es/docs/Web/HTTP/Overview</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <strong>2. Cloudflare Learning Center.</strong> (2023). <em>¿Qué es TLS? | Diferencias entre TLS y SSL</em>. Recuperado de: 
+                <br><a href="https://www.cloudflare.com/es-es/learning/ssl/transport-layer-security-tls/" target="_blank">https://www.cloudflare.com/es-es/learning/ssl/transport-layer-security-tls/</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <strong>3. Amazon Web Services (AWS).</strong> (2023). <em>¿Qué es una arquitectura de microservicios?</em>. Recuperado de: 
+                <br><a href="https://aws.amazon.com/es/microservices/" target="_blank">https://aws.amazon.com/es/microservices/</a>
+            </li>
+        </ul>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">Desarrollado para la investigación de Arquitecturas Web.</p>
+    </footer>
+
+</body>
+</html>
