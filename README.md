@@ -1,28 +1,45 @@
-# Investigaci-n-Arquitecturas-Web-HTTP-HTTPS-y-SSL-TLS
-Investigar y explicar los fundamentos de las arquitecturas web y de la comunicación segura en la Web. La investigación deberá presentarse como un sitio web funcional. Lee todas las instrucciones para resolver tus dudas, aun así si no queda claro, manda un WhatsApp en el grupo de la materia.
+# 🌐 Investigación: Arquitecturas Web, HTTP/HTTPS y SSL/TLS
 
-Temas obligatorios
-Arquitecturas web
-Definir qué es una arquitectura web.
-Investigar los principales tipos de arquitecturas web que existen.
-Identificar cuáles son las arquitecturas más comunes o más utilizadas actualmente.
-Elaborar una comparación que incluya, como mínimo: estructura, ventajas, desventajas, escalabilidad, complejidad, costos y casos de uso.
-HTTP y HTTPS
-Explicar qué es HTTP y cómo participa en la comunicación entre cliente y servidor.
-Explicar qué es HTTPS.
-Comparar HTTP y HTTPS: funcionamiento, seguridad, puertos habituales, cifrado y escenarios de uso.
-SSL y TLS
-Explicar qué son SSL y TLS y cuál es su función.
-Describir sus diferencias y su relación con HTTPS.
-Explicar por qué TLS es el estándar vigente y por qué SSL se considera obsoleto.
-Producto a desarrollar
-La investigación deberá convertirse en una página o sitio web. El formato visual es libre.
 
-Debe existir un archivo principal llamado index.html.
-El uso de CSS y JavaScript es opcional, pero pueden emplearlos para mejorar la presentación, navegación o interactividad.
-Pueden utilizar cualquier editor, biblioteca, framework o tecnología web.
-No se debecompilar ni requerir ningun tipo de instalación y/o liberias.
-El sitio debe abrir correctamente después de descomprimir el proyecto.
-Incluyan imágenes, tablas o diagramas solo cuando ayuden a explicar el contenido y respeten sus licencias.
-Fuentes
-Consulten y citen al menos tres fuentes confiables. Incluyan al final del sitio una sección de referencias con el nombre de la fuente y su enlace. Eviten copiar y pegar contenido sin explicarlo con sus propias palabras.
+## 📝 Descripción del Proyecto
+Este proyecto tiene como objetivo investigar y explicar los fundamentos de las arquitecturas web y los protocolos de comunicación segura en la red. El resultado final de esta investigación debe presentarse de forma interactiva como un **sitio web funcional**.
+
+---
+
+## 📚 Temas Obligatorios a Desarrollar
+
+### 1. Arquitecturas Web
+* **Definición:** Explica claramente qué es una arquitectura web.
+* **Tipos:** Investiga los principales tipos de arquitecturas web que existen.
+* **Tendencias:** Identifica cuáles son las arquitecturas más comunes o utilizadas en la actualidad.
+* **Comparativa:** Elabora una tabla o esquema que compare las arquitecturas e incluya como mínimo: estructura, ventajas, desventajas, escalabilidad, complejidad, costos y casos de uso.
+
+### 2. HTTP y HTTPS
+* **HTTP:** Explica su concepto y cómo facilita la comunicación entre cliente y servidor.
+* **HTTPS:** Define qué es y por qué es fundamental.
+* **Comparativa HTTP vs HTTPS:** Contrasta ambos protocolos analizando su funcionamiento, seguridad, puertos habituales, métodos de cifrado y escenarios de uso recomendados.
+
+### 3. SSL y TLS
+* **Conceptos:** Explica qué son los certificados SSL y TLS, y cuál es su función principal.
+* **Diferencias:** Describe sus diferencias técnicas y su relación directa con el protocolo HTTPS.
+* **Estatus Actual:** Argumenta por qué TLS es el estándar de seguridad vigente y por qué SSL se considera obsoleto en la actualidad.
+
+---
+
+## 🚀 Requisitos Técnicos del Producto
+
+La investigación deberá convertirse en una página o sitio web. El diseño y formato visual son completamente libres, pero debes cumplir estrictamente con lo siguiente:
+
+* **Punto de entrada:** El proyecto debe contener un archivo principal llamado `index.html`.
+* **Diseño e Interacción:** El uso de CSS y JavaScript es opcional, pero altamente recomendado para mejorar la presentación, la navegación o la interactividad.
+* **Libertad de herramientas:** Puedes utilizar cualquier editor de código, biblioteca, framework o tecnología web.
+* **⚠️ Regla de ejecución (Zero-Install):** **No se debe compilar** ni requerir ningún tipo de instalación (ej. `npm install`) o descarga de librerías locales. El sitio web debe abrir y funcionar correctamente de forma inmediata tras descomprimir el proyecto.
+* **Recursos Gráficos:** Incluye imágenes, tablas o diagramas solo cuando aporten valor a la explicación, asegurándote siempre de respetar sus licencias de uso.
+
+---
+
+## 📖 Fuentes y Referencias
+
+* Es obligatorio consultar y citar al menos **tres fuentes confiables**.
+* Debes incluir una sección de referencias al final de tu sitio web, especificando el nombre de la fuente y su enlace directo.
+* **Importante:** Explica los conceptos con tus propias palabras. Evita por completo la práctica de copiar y pegar contenido textual.
